@@ -419,3 +419,8 @@ th {
   text-align: left;
   font-weight: bold;
 }
+
+* {
+  margin: 0px;
+  padding: 0px;
+}

@@ -1,0 +1,29 @@
+.container {
+  position:sticky;
+  top:50px;
+  left:0;
+  height:calc(100vh - 50px);
+  background:#222222
+}
+
+.contents {
+  background: green;
+  list-style-type: none;
+  >a{
+    display:flex;
+    background: #222222;
+    padding-top:6px;
+    padding-bottom:6px;
+    border-left: 2px solid #5555ff;
+    padding-left:10px;
+    >li{
+      >span{
+        padding-left:10px;
+        color:white;
+      }
+    }
+    &:hover{
+      background:#444444
+    }
+  }
+}

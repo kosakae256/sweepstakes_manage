@@ -33,11 +33,11 @@ function Header(props: any) {
         <h1 style={{ letterSpacing: "1px", textAlign: "left" }}>
           <Link href="/">
             <a>
-              <span style={{ fontWeight: 250 }}>Simple</span>
-              <span style={{ fontWeight: 100 }}>News</span>
+              <span style={{ fontWeight: 250 }}>SweepStakes</span>
             </a>
           </Link>
         </h1>
+        <div className={styles.sign}>
         {function f() {
           if (session) {
             return (
@@ -53,6 +53,7 @@ function Header(props: any) {
           )
         }()
         }
+        </div>
       </header>
     </section>
   );

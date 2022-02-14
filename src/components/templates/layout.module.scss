@@ -1,0 +1,19 @@
+$nav-width: 200px;
+
+.container{
+    display:flex;
+    align-items: stretch;
+    margin-top:50px;
+}
+
+.nav{
+    width: $nav-width;
+    display:block;
+    transition: margin-left .35s;
+}
+
+.main_container{
+    max-width:100%;
+    flex:1;
+    background:#fffff7;
+}
