@@ -50,15 +50,16 @@ const INFOS = [
   },
 ];
 
-function Nav(props: any) {
+function Nav() {
   return (
+    <>
     <section className={styles.container}>
       <ul className={styles.contents}>
         {INFOS.map((topic, index) => {
           return (
-            <Link href={`${topic.path}`}>
+            <Link href={`${topic.path}`} key={index}>
               <a>
-                <li key={index} >
+                <li>
                   <span>
                     <Image
                       src={`/img/infoIcons/${topic.icon}.png`}
@@ -77,7 +78,7 @@ function Nav(props: any) {
         })}
       </ul>
     </section>
-
+  </>
   );
 };
 

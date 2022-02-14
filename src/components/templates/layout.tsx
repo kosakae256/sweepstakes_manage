@@ -21,7 +21,7 @@ function Layout({ children }: any) {
             <Header state={state} />
             <div className={styles.container}>
                 <div className={styles.nav + " " + classnames(statusClassNames)}>
-                    <Nav state={state} />
+                    <Nav />
                 </div>
                 <div className={styles.main_container}>
                     {children}
