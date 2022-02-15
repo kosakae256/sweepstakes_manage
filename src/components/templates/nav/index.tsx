@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./index.module.scss";
 import Image from "next/image";
+import type { NextPage } from "next";
 
 const INFOS = [
   {
@@ -50,7 +51,7 @@ const INFOS = [
   },
 ];
 
-function Nav() {
+const Nav: NextPage = () => {
   return (
     <>
     <section className={styles.container}>

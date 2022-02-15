@@ -3,8 +3,11 @@ import Nav from './nav'
 import React, { useState, useEffect, createContext, useContext } from "react";
 import styles from './layout.module.scss';
 import classnames from "classnames";
+import { useSession, signIn, signOut } from "next-auth/react"
+import InfoBox from '../atoms/infobox';
+import type { NextPage } from "next";
 
-function Layout({ children }: any) {
+const Layout: NextPage = ({ children }: any) => {
     const [toggle, setToggle] = useState("on");
     const state = {
         toggle,
@@ -15,7 +18,8 @@ function Layout({ children }: any) {
         toggleon: state.toggle === "on",
         toggleoff: state.toggle === "off"
     };
-
+    const { data: session } = useSession();
+    console.log(session);
     return (
         <>
             <Header state={state} />
@@ -24,7 +28,23 @@ function Layout({ children }: any) {
                     <Nav />
                 </div>
                 <div className={styles.main_container}>
-                    {children}
+                    {function f() {
+                        if (session) {
+                            return (
+                                children
+                            )
+                        }
+                        else {
+                            return(
+                                children
+                            )
+                        }
+                        return (<InfoBox>
+                            <p>サインインしてください。</p>
+                            <button onClick={() => signIn()}>サインインする</button>
+                            </InfoBox>)
+
+                    }()}
                 </div>
             </div>
 
